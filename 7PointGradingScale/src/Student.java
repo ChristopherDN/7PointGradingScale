@@ -8,6 +8,15 @@ public class Student {
     this.grades = grades;
   }
 
+  public String getName(){
+    return name;
+  }
+
+  public int[] getGrades(){
+    return grades;
+  }
+
+
   public double averageGrade() {
     return 0;
   }

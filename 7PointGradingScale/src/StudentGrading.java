@@ -1,16 +1,34 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentGrading {
 
   public static void main(String[] args) {
-    int[] grades = new int[6];
+    int[] grades = new int[7];
     Scanner in = new Scanner(System.in);
-    for (int i = 0; i < 7; i++) {
-      System.out.println("Enter your grade");
-      grades[i] = in.nextInt();
+
+    boolean isCreating = true;
+    ArrayList<Student> students = new ArrayList<>();
+    while(isCreating) {
+      System.out.print("Enter you name: ");
+      String name = in.next();
+
+      for (int i = 0; i < 7; i++) {
+        System.out.print("Enter your grade: ");
+        grades[i] = in.nextInt();
+      }
+      System.out.println("Do you want to create a new Student grading, press y/n: ");
+      String answer = in.next();
+      if (answer.equals("n")){
+        isCreating = false;
+      }
+      students.add(new Student(name, grades));
     }
 
-
+    for (int i = 0; i < students.size(); i++) {
+      System.out.println(students.get(i).getName());
+      System.out.println(students.get(i).getGrades());
+    }
 
   }
 }
