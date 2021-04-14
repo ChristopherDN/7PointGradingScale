@@ -9,7 +9,7 @@ public class StudentGrading {
 
     boolean isCreating = true;
     ArrayList<Student> students = new ArrayList<>();
-    while(isCreating) {
+    while (isCreating) {
       System.out.print("Enter you name: ");
       String name = in.next();
 
@@ -19,7 +19,7 @@ public class StudentGrading {
       }
       System.out.println("Do you want to create a new Student grading, press y/n: ");
       String answer = in.next();
-      if (answer.equals("n")){
+      if (answer.equals("n")) {
         isCreating = false;
       }
       students.add(new Student(name, grades));
@@ -27,8 +27,13 @@ public class StudentGrading {
 
     for (int i = 0; i < students.size(); i++) {
       System.out.println(students.get(i).getName());
-      System.out.println(students.get(i).getGrades());
-    }
 
+      //Foreach loop
+      int j = 1;
+      for (int grade : students.get(i).getGrades()) {
+        System.out.print("Grade " + (j) + ". " + grade + "\n");
+        j++;
+      }
+    }
   }
 }

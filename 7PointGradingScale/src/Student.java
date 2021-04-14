@@ -16,8 +16,8 @@ public class Student {
     return grades;
   }
 
-
   public double averageGrade() {
     return 0;
   }
+
 }
